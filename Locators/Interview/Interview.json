@@ -1,0 +1,21 @@
+{
+  "Interviews": {
+    "name": "Interviews",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//span[contains(text(),' Interviews ')]"
+  },
+  "Configure_and_schedule": {
+    "name": "Configure_and_schedule",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//span[contains(text(),'Configure and schedule')]"
+  },
+  "SIP": {
+    "name": "SIP",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//div[contains(text(),'Smart Interview Professional')]"
+  }
+}
+

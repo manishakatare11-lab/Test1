@@ -1,0 +1,34 @@
+{
+
+  "Username": {
+    "name": "Username",
+    "element_type": "text",
+    "find_by": "xpath",
+    "identifier": "//input[@id='username']"
+  },
+  "Password": {
+    "name": "Password",
+    "element_type": "password",
+    "find_by": "id",
+    "identifier": "password"
+  },
+  "Submit": {
+    "name": "Submit",
+    "element_type": "submit",
+    "find_by": "id",
+    "identifier": "loginBtn"
+  },
+  "act_dashboard_text": {
+    "name": "act_dashboard_text",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//span[text()='TalentCentral+']"
+  },
+  "act_validation_text": {
+    "name": "act_validation_text",
+    "element_type": "div",
+    "find_by": "class",
+    "identifier": "error-text"
+  }
+
+}

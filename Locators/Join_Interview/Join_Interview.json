@@ -1,0 +1,58 @@
+{
+  "CandidateName": {
+    "name": "CandidateName",
+    "element_type": "text",
+    "find_by": "xpath",
+    "identifier": "//input[@data-test-id='candidate-name-input']"
+  },
+  "CandidateEmail": {
+    "name": "CandidateEmail",
+    "element_type": "text",
+    "find_by": "xpath",
+    "identifier": "//input[@data-test-id='candidate-email-input']"
+  },
+  "Join": {
+    "name": "Join",
+    "element_type": "submit",
+    "find_by": "xpath",
+    "identifier": "//button[@data-test-id='candidate-login-btn' and @class= 'btn btn-primary login-btn']"
+  },
+  "aiSummaryConsentcheckbox": {
+    "name": "aiSummaryConsentcheckbox",
+    "element_type": "button",
+    "find_by": "id",
+    "identifier": "aiSummaryConsentcheckbox"
+  },
+  "recordConsentcheckbox": {
+    "name": "recordConsentcheckbox",
+    "element_type": "button",
+    "find_by": "id",
+    "identifier": "recordConsentcheckbox"
+  },
+  "dpnConsentCheckbox": {
+    "name": "dpnConsentCheckbox",
+    "element_type": "div",
+    "find_by": "id",
+    "identifier": "dpnConsentCheckbox"
+  },
+  "JoinCandidate": {
+    "name": "JoinCandidate",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//div[@id='enter-lobby-btn']"
+  },
+  "waitText": {
+    "name": "waitText",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//div[@class='offboarding-text']"
+  },
+  "JoinAsInterviewer": {
+    "name": "waitText",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//button[@data-test-id='candidate-login-btn'  and @class='btn join-btn']"
+  }
+
+
+}

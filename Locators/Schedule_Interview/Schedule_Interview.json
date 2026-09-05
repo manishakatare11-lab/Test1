@@ -1,0 +1,70 @@
+{
+  "IGB": {
+    "name": "IGB",
+    "element_type": "button",
+    "find_by": "xpath",
+    "identifier": "//button[contains(text(),'Search and select interview guide or configuration')]"
+  },
+  "Title": {
+    "name": "Title",
+    "element_type": "text",
+    "find_by": "xpath",
+    "identifier": "//input[contains(@placeholder, 'Enter a title for this schedule')]"
+  },
+  "Interviewer": {
+    "name": "Interviewer",
+    "element_type": "button",
+    "find_by": "xpath",
+    "identifier": "//div[@class='body']//div[@class='body']//button[@type='button']"
+  },
+   "SearchInterviewer": {
+    "name": "SearchInterviewer",
+    "element_type": "button",
+    "find_by": "xpath",
+    "identifier": "//input[@placeholder='Search by name...']"
+  },
+   "Checkbox": {
+    "name": "Checkbox",
+    "element_type": "span",
+    "find_by": "xpath",
+    "identifier": "//span[@ng-if='settings.showEachCheck']"
+  },
+   "CandidateName": {
+    "name": "CandidateName",
+    "element_type": "input",
+    "find_by": "xpath",
+    "identifier": "//input[@ng-model='candidateName1']"
+  },
+  "CandidateEmail": {
+    "name": "CandidateEmail",
+    "element_type": "input",
+    "find_by": "name",
+    "identifier": "email"
+  },
+  "ScheduleButton": {
+    "name": "ScheduleButton",
+    "element_type": "span",
+    "find_by": "xpath",
+    "identifier": "//span[@class='ng-binding' and contains(text(),'Schedule')]"
+  },
+  "ScheduleanywayButton": {
+    "name": "ScheduleanywayButton",
+    "element_type": "button",
+    "find_by": "xpath",
+    "identifier": "//button[contains(text(),'Schedule anyway')]"
+  },
+  "Inviteinterviewers": {
+    "name": "Invite interviewers",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//div[contains(text(),'Invite interviewers')]"
+  },
+  "commonlogin": {
+    "name": "Invite interviewers",
+    "element_type": "span",
+    "find_by": "xpath",
+    "identifier": "//span[@tooltip='Copy URL']"
+  }
+
+
+}
