@@ -9,3 +9,7 @@ class TestE2EFlow():
         join_interviewer = Test_join_interview()
         schedule_test.test_schedule_interview(login_setup)
         join_interviewer.test_join_interview()
+
+    def test_checknew(self):
+        join_interviewer = Test_join_interview()
+        sys("test")
