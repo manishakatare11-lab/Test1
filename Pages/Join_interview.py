@@ -17,6 +17,7 @@ class join_interview(BasePage):
         super().__init__(driver, "Locators/Join_Interview/Join_Interview.json")
 
     def fill_candidate(self):
+        self.driver.maximize_window()
 
         candidate_data = self.read_excel()
 
@@ -38,12 +39,16 @@ class join_interview(BasePage):
             time.sleep(5)
 
     def allow_consent(self):
-        self.driver.maximize_window()
+        #time.sleep(5)
         self.do_click("aiSummaryConsentcheckbox")
         self.do_click("recordConsentcheckbox")
         self.do_click("dpnConsentCheckbox")
-        self.do_click("JoinCandidate")
 
+
+
+    def join_candidate(self):
+
+        self.do_click("JoinCandidate")
         time.sleep(10)
 
 
@@ -63,3 +68,13 @@ class join_interview(BasePage):
         self.interviewlogin.login(username, password)
 
         self.do_click("JoinInterview")
+        time.sleep(5)
+
+    def Enter_interview(self):
+        self.do_click("EnterInterviewroom")
+        time.sleep(5)
+        self.do_click("dpnConsentCheckbox")
+        time.sleep(5)
+        self.do_click("joinInterviewerbtn")
+        time.sleep(500)
+

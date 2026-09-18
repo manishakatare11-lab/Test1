@@ -37,9 +37,9 @@
   },
   "JoinCandidate": {
     "name": "JoinCandidate",
-    "element_type": "div",
+    "element_type": "button",
     "find_by": "xpath",
-    "identifier": "//div[@id='enter-lobby-btn']"
+    "identifier": "//button[contains(text(),'Join interview')]"
   },
   "waitText": {
     "name": "waitText",
@@ -48,11 +48,24 @@
     "identifier": "//div[@class='offboarding-text']"
   },
   "JoinAsInterviewer": {
-    "name": "waitText",
+    "name": "JoinAsInterviewer",
     "element_type": "div",
     "find_by": "xpath",
     "identifier": "//button[@data-test-id='candidate-login-btn'  and @class='btn join-btn']"
+  },
+  "EnterInterviewroom": {
+    "name": "EnterInterviewroom",
+    "element_type": "div",
+    "find_by": "xpath",
+    "identifier": "//div[@class='enter-interview']"
+  },
+  "joinInterviewerbtn": {
+    "name": "joinInterviewerbtn",
+    "element_type": "button",
+    "find_by": "xpath",
+    "identifier": " //button[contains(@class,'join-interview-btn')]"
   }
+
 
 
 }

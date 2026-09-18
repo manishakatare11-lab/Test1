@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from Pages.Join_interview import join_interview
+from utilities.read_properties import Read_Config
 
 
 class Test_join_interview:
@@ -29,6 +30,10 @@ class Test_join_interview:
         return options
 
     def test_join_interview(self):
+        properties = Read_Config()
+
+        username = properties.get_username()
+        password = properties.get_password()
 
         driver = webdriver.Chrome(options=self.chrome_options())
 
@@ -36,6 +41,7 @@ class Test_join_interview:
 
         candidate.fill_candidate()
         candidate.allow_consent()
+        candidate.join_candidate()
         #time.sleep(3)
 
 
@@ -44,6 +50,8 @@ class Test_join_interview:
         interviewer = join_interview(driver)
 
         interviewer.interviewer_join(
-            username="priya.Sharma@yopmail.com",
-            password="VZ6n@tTStuHnBZV"
+            username=username,
+            password=password
         )
+
+        interviewer.Enter_interview()

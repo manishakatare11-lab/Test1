@@ -1,6 +1,6 @@
 import os.path
 import time
-
+from pathlib import Path
 import openpyxl
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -16,6 +16,12 @@ class BasePage:
     def __init__(self, driver, json_path):
         self.driver = driver
         self.locators = read_json(json_path)
+        print("Current Directory =", os.getcwd())
+
+        print("Excel Path =", os.path.abspath("../utilities/details.xlsx"))
+        BASE_DIR = Path(__file__).resolve().parent.parent
+
+        EXCEL_FILE = BASE_DIR / "utilities" / "details.xlsx"
 
     def get_by(self, locator_type):
         locator_type = locator_type.lower()
@@ -149,7 +155,7 @@ class BasePage:
 
     def Save_details(self, candidate_name, candidate_email,
                      common_login_url,
-                     file_path="../utilities/details.xlsx"):
+                     file_path="utilities/details.xlsx"):
 
         # Check file exists or not
         if os.path.exists(file_path):
@@ -179,7 +185,7 @@ class BasePage:
         print(f"{candidate_name} | {candidate_email} | {common_login_url} saved")
 
     def read_excel(self):
-        workbook = openpyxl.load_workbook("../utilities/details.xlsx")
+        workbook = openpyxl.load_workbook("utilities/details.xlsx")
         sheet = workbook.active
 
         data =[]
