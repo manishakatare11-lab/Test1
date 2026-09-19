@@ -1,5 +1,3 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -9,14 +7,14 @@ from utilities.read_properties import Read_Config
 
 class Test_join_interview:
 
-    def chrome_options(self):
-
+    @staticmethod
+    def chrome_options():
         options = Options()
-
         options.add_argument("--incognito")
-
         options.add_argument("--use-fake-ui-for-media-stream")
-
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-gpu")
         options.add_experimental_option(
             "prefs",
             {
@@ -26,32 +24,29 @@ class Test_join_interview:
                 "profile.default_content_setting_values.geolocation": 1,
             },
         )
-
         return options
 
     def test_join_interview(self):
         properties = Read_Config()
-
         username = properties.get_username()
         password = properties.get_password()
 
-        driver = webdriver.Chrome(options=self.chrome_options())
+        candidate_driver = webdriver.Chrome(options=self.chrome_options())
+        try:
+            candidate = join_interview(candidate_driver)
+            candidate.fill_candidate()
+            candidate.allow_consent()
+            candidate.join_candidate()
+        finally:
+            candidate_driver.quit()
 
-        candidate = join_interview(driver)
-
-        candidate.fill_candidate()
-        candidate.allow_consent()
-        candidate.join_candidate()
-        #time.sleep(3)
-
-
-        driver = webdriver.Chrome(options=self.chrome_options())
-
-        interviewer = join_interview(driver)
-
-        interviewer.interviewer_join(
-            username=username,
-            password=password
-        )
-
-        interviewer.Enter_interview()
+        interviewer_driver = webdriver.Chrome(options=self.chrome_options())
+        try:
+            interviewer = join_interview(interviewer_driver)
+            interviewer.interviewer_join(
+                username=username,
+                password=password,
+            )
+            interviewer.Enter_interview()
+        finally:
+            interviewer_driver.quit()
